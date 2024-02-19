@@ -1,12 +1,11 @@
 # event-generator
 Custom prompt for GPT4 wrapped in flask to generate .ics files event files based on text.
 
-Published at: https://ics-generator.adivardhan.tech/
+**Published at**: https://ics-generator.adivardhan.tech/
+Note: It takes 50secs for the VM to start on render free tier. 
 
-It takes 50secs for the VM to start on render free tier. 
 
-
-Want to run it locally?
+# Want to run it locally?
 
 ## Managing Environment 
 ### Create a env:
