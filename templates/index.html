@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICS Generator</title>
+    <style>
+        /* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    cursor: pointer;
+}
+
+.instructions {
+    margin-bottom: 20px;
+}
+
+.success, .error {
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.success {
+    background-color: lightgreen;
+}
+
+.error {
+    background-color: lightcoral;
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>ICS Generator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>ICS Event Generator</h1>
+        <div class="instructions">
+            <p>Enter your event details in the form below. The event details will be generated in EST.</p>
+            <p><strong>Example 1:</strong> I have a meeting on March 10th at 2pm in room H-431.</p>
+            <p><strong>Example 2(copy paste an email thread):</strong>Hi [Team Members],
+                Would you be available for a meeting on [date] at [time]  to discuss [topic]?  Please let me know your availability.</p>
+        </div>
+
+        <form method="POST">
+            <label for="field_name">Event Details:</label>
+            <input type="text" name="field_name" placeholder="Enter event details" required>
+
+            <label for="api_key">API Key:</label> 
+            <input type="text" name="api_key" placeholder="Enter API Key" required>
+
+            <button type="submit">Generate ICS</button>
+        </form>
+
+        {% if message %} 
+            <div class="{{ message_type }}">{{ message }}</div>
+         {% endif %}
+    </div>
+</body>
+</html>
+
+</body>
+</html>
